@@ -65,6 +65,11 @@ function wrapRequire(
 ): NodeJS.Require {
   function requireFromSideOutputs(id: string): any {
     let filename = normalizeJoin(dirname, id);
+    // VAIZLE: This will correctly import projects folder files
+    if (id.indexOf("projects/") === 0) {
+      filename = dirname.split("projects")[0] + '/' + id;
+      filename = filename.replace('//', '/');
+    }
     if (path.extname(filename) === "") {
       filename += ".js";
     }

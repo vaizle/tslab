@@ -61,7 +61,8 @@ typings/
 .next
 
 # TypeScript output dir
-dist/
+# VAIZLE: We will use dist folder
+# dist/
 
 # Temporary files from tests
 tmp/

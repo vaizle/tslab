@@ -314,6 +314,10 @@ export function createConverter(options?: ConverterOptions): Converter {
       // rootDir is necessary to stabilize the paths of output files.
       rootDir: cwd,
       outDir,
+      // VAIZLE: This will correctly import projects folder files
+      paths: {
+        "projects/*": ["projects/*"]
+      }
     },
     sys,
     null,
